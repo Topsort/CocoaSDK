@@ -10,7 +10,7 @@ import Foundation
 import AnyCodable
 #endif
 
-public struct ImpressionEventAllOf: Codable, JSONEncodable, Hashable {
+public struct ImpressionEventAllOf: Encodable, JSONEncodable, Hashable {
 
     public var impressions: [Impression]
     /** RFC3339 formatted timestamp including UTC offset */

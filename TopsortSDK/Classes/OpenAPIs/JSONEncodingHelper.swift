@@ -32,6 +32,7 @@ open class JSONEncodingHelper {
         if let encodableObj = encodableObj {
             do {
                 let data = try JSONSerialization.data(withJSONObject: encodableObj, options: .prettyPrinted)
+                print(data)
                 params = JSONDataEncoding.encodingParameters(jsonData: data)
             } catch {
                 print(error.localizedDescription)

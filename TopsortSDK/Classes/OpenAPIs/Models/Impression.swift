@@ -10,7 +10,7 @@ import Foundation
 import AnyCodable
 #endif
 
-public struct Impression: Codable, JSONEncodable, Hashable {
+public struct Impression: Encodable, JSONEncodable, Hashable {
 
     public var placement: Placement
     /** The product that was rendered. */

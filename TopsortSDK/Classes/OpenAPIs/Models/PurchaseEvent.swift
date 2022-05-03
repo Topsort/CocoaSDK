@@ -11,15 +11,9 @@ import AnyCodable
 #endif
 
 /** The consumer has purchased some products. */
-public struct PurchaseEvent: Codable, JSONEncodable, Hashable {
+public struct PurchaseEvent: Encodable, JSONEncodable, Hashable {
 
-    public enum EventType: String, Codable, CaseIterable {
-        case impression = "Impression"
-        case click = "Click"
-        case purchase = "Purchase"
-    }
     /** Discriminator for the type of event. */
-    public var eventType: EventType
     public var session: Session
     /** The marketplace assigned ID for the order. */
     public var id: String
@@ -28,8 +22,7 @@ public struct PurchaseEvent: Codable, JSONEncodable, Hashable {
     /** Items purchased. */
     public var items: [PurchaseItem]
 
-    public init(eventType: EventType, session: Session, id: String, purchasedAt: Date, items: [PurchaseItem]) {
-        self.eventType = eventType
+    public init(session: Session, id: String, purchasedAt: Date, items: [PurchaseItem]) {
         self.session = session
         self.id = id
         self.purchasedAt = purchasedAt
@@ -48,7 +41,7 @@ public struct PurchaseEvent: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(eventType, forKey: .eventType)
+        try container.encode("Purchase", forKey: .eventType)
         try container.encode(session, forKey: .session)
         try container.encode(id, forKey: .id)
         try container.encode(purchasedAt, forKey: .purchasedAt)
