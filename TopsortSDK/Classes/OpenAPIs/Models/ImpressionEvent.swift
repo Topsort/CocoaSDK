@@ -24,7 +24,7 @@ public struct ImpressionEvent: Encodable, JSONEncodable, Hashable {
         self.occurredAt = occurredAt
     }
 
-    public enum CodingKeys: String, CodingKey, CaseIterable {
+    private enum CodingKeys: String, CodingKey, CaseIterable {
         case eventType
         case session
         case impressions

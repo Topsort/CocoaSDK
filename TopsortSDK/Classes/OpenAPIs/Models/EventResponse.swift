@@ -24,7 +24,7 @@ public struct EventResponse: Codable, JSONEncodable, Hashable {
         self.purchaseId = purchaseId
     }
 
-    public enum CodingKeys: String, CodingKey, CaseIterable {
+    private enum CodingKeys: String, CodingKey, CaseIterable {
         case id
         case clickId
         case impressions

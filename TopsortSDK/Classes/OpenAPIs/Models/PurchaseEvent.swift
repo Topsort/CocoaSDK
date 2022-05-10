@@ -29,7 +29,7 @@ public struct PurchaseEvent: Encodable, JSONEncodable, Hashable {
         self.items = items
     }
 
-    public enum CodingKeys: String, CodingKey, CaseIterable {
+    private enum CodingKeys: String, CodingKey, CaseIterable {
         case eventType
         case session
         case id

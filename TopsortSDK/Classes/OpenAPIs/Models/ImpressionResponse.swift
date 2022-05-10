@@ -20,7 +20,7 @@ public struct ImpressionResponse: Codable, JSONEncodable, Hashable {
         self.impressionId = impressionId
     }
 
-    public enum CodingKeys: String, CodingKey, CaseIterable {
+    private enum CodingKeys: String, CodingKey, CaseIterable {
         case id
         case impressionId
     }

@@ -11,16 +11,16 @@ import Foundation
 // If you are affected by this issue, please consider removing the following two lines,
 // By setting the option removeMigrationProjectNameClass to true in the generator
 @available(*, deprecated, renamed: "OpenAPIClientAPI")
-public typealias OpenAPIClient = OpenAPIClientAPI
+internal typealias OpenAPIClient = OpenAPIClientAPI
 
-open class OpenAPIClientAPI {
+internal class OpenAPIClientAPI {
     public static var customHeaders: [String: String] = [:]
     public static var credential: URLCredential?
     public static var requestBuilderFactory: RequestBuilderFactory = URLSessionRequestBuilderFactory()
     public static var apiResponseQueue: DispatchQueue = .main
 }
 
-open class RequestBuilder<T> {
+internal class RequestBuilder<T> {
     var credential: URLCredential?
     var headers: [String: String]
     public let parameters: [String: Any]?
@@ -66,7 +66,7 @@ open class RequestBuilder<T> {
     }
 }
 
-public protocol RequestBuilderFactory {
+internal protocol RequestBuilderFactory {
     func getNonDecodableBuilder<T>() -> RequestBuilder<T>.Type
     func getBuilder<T: Decodable>() -> RequestBuilder<T>.Type
 }

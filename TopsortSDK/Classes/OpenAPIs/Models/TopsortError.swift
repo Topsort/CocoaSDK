@@ -44,7 +44,7 @@ public struct TopsortError: Codable, JSONEncodable, Hashable {
         self.message = message
     }
 
-    public enum CodingKeys: String, CodingKey, CaseIterable {
+    private enum CodingKeys: String, CodingKey, CaseIterable {
         case errCode
         case docUrl
         case message

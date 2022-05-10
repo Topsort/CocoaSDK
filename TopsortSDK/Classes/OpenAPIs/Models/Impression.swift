@@ -29,7 +29,7 @@ public struct Impression: Encodable, JSONEncodable, Hashable {
         self.resolvedBidId = resolvedBidId
     }
 
-    public enum CodingKeys: String, CodingKey, CaseIterable {
+    private enum CodingKeys: String, CodingKey, CaseIterable {
         case placement
         case productId
         case auctionId

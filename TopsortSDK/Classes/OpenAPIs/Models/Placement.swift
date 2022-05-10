@@ -22,7 +22,7 @@ public struct Placement: Codable, JSONEncodable, Hashable {
         self.location = location
     }
 
-    public enum CodingKeys: String, CodingKey, CaseIterable {
+    private enum CodingKeys: String, CodingKey, CaseIterable {
         case page
         case location
     }

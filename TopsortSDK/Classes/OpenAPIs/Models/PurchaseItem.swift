@@ -30,7 +30,7 @@ public struct PurchaseItem: Codable, JSONEncodable, Hashable {
         self.resolvedBidId = resolvedBidId
     }
 
-    public enum CodingKeys: String, CodingKey, CaseIterable {
+    private enum CodingKeys: String, CodingKey, CaseIterable {
         case productId
         case auctionId
         case quantity

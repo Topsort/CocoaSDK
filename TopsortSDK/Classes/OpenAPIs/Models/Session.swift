@@ -20,7 +20,7 @@ public struct Session: Encodable, JSONEncodable, Hashable {
         self.sessionId = sessionId
     }
 
-    public enum CodingKeys: String, CodingKey, CaseIterable {
+    private enum CodingKeys: String, CodingKey, CaseIterable {
         case sessionId
     }
 
