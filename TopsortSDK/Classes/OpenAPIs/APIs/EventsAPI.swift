@@ -6,9 +6,7 @@
 //
 
 import Foundation
-#if canImport(AnyCodable)
 import AnyCodable
-#endif
 
 class EventsAPI {
     
@@ -39,7 +37,6 @@ class EventsAPI {
         }
     }
     
-    @available(macOS 10.15.0, *)
     @available(iOS 13.0.0, *)
     func reportEventAsync(event: Event) async throws -> EventResponse {
         return try await withCheckedThrowingContinuation({ continuation in
@@ -69,7 +66,7 @@ class EventsAPI {
         switch event {
             case let .impression(impressionEvent):
                 localVariableParameters =   JSONEncodingHelper.encodingParameters(forEncodableObject: impressionEvent)
-            case let .click(clickEvent):
+            case let .hit(clickEvent):
                 localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: clickEvent)
             case let .purchase(purchaseEvent):
                 localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: purchaseEvent)

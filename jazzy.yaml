@@ -1,0 +1,8 @@
+swift_build_tool: xcodebuild
+xcodebuild_arguments:
+  - "-scheme"
+  - "TopsortSDK"
+  - "-destination"
+  - "platform=iOS Simulator,name=iPhone 8,OS=15.4"
+  - "-sdk"
+  - "iphonesimulator"

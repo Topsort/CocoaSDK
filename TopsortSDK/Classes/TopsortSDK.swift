@@ -6,11 +6,12 @@
 //
 
 import Foundation
-#if canImport(UIKit)
-import UIKit
-#endif
 
+/// Topsort iOS SDK
+/// - copyright: 2022 - Topsort Inc
 public final class TopsortSDK {
+    typealias Completion = ((_ data: EventResponse?, _ error: Error?) -> Void)
+    
     private var url: String
     private var apiKey: String
     private var eventsApi: EventsAPI
@@ -21,8 +22,29 @@ public final class TopsortSDK {
         self.eventsApi = EventsAPI(basePath: url, apiKey: apiKey)
     }
     
-    @available(macOS 10.15.0, *)
-    func logImpression(impressions: [Impression]) async throws -> EventResponse {
+    /// Sends an impressions event to Topsort's API
+    /// An impression is any product that has been rendered on screen.
+    /// - Parameter impressions: List of impressions that have been recorded in one render.
+    /// - Parameter completion: A completion function that receives the EventResponse, or an error.
+    /// - Returns: A cancelable async task.
+    @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API")
+    @discardableResult
+    func logImpressions(impressions: [Impression], completion: @escaping Completion) -> RequestTask {
+        let event = ImpressionEvent(
+            session: Session(sessionId: getSessionId()),
+            impressions: impressions,
+            occurredAt: Date()
+        )
+        return eventsApi.reportEvent(event: .impression(event), completion: completion)
+    }
+    
+    /// Sends an impressions event to Topsort's API
+    /// An impression is any product that has been rendered on screen.
+    /// - Parameter impressions: List of impressions that have been recorded in one render.
+    /// - Returns: an EventResponse
+    /// - Throws:
+    @available(iOS 13.0.0, *)
+    func logImpressions(impressions: [Impression]) async throws -> EventResponse {
         let event = ImpressionEvent(
             session: Session(sessionId: getSessionId()),
             impressions: impressions,
@@ -31,16 +53,47 @@ public final class TopsortSDK {
         return try await eventsApi.reportEventAsync(event: .impression(event))
     }
     
-    @available(macOS 10.15.0, *)
-    func logClick(click: ClickEvent) async throws -> EventResponse {
-        return try await eventsApi.reportEventAsync(event: .click(click))
+    /// Sends a hit event to Topsort's API
+    /// A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.
+    /// - Parameter hit: A Hit struct that contains a Session, the product ID, a placement on the App.
+    /// - Parameter completion: A Completion function that receives the EventResponse, or an error.
+    /// - Returns: A cancelable async task.
+    @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API")
+    @discardableResult
+    func logHit(hit: HitEvent, completion: @escaping Completion) -> RequestTask {
+        return eventsApi.reportEvent(event: .hit(hit), completion: completion)
     }
     
-    @available(macOS 10.15.0, *)
+    /// Sends a hit event to Topsort's API
+    /// A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.
+    /// - Parameter hit: A Hit struct that contains a Session, the product ID, a placement on the App.
+    /// - Returns an EventResponse or throws.
+    @available(iOS 13.0.0, *)
+    func logHit(hit: HitEvent) async throws -> EventResponse {
+        return try await eventsApi.reportEventAsync(event: .hit(hit))
+    }
+    
+    /// Sends a purchase event to Topsort's API
+    /// A purchase should be generated when a user completes a transaction to buy any number of products.
+    /// - Parameter purchase: A Purchase struct that contains a Session, the list product IDs.
+    /// - Parameter completion: A Completion function that receives the EventResponse, or an error.
+    /// - Returns: A cancelable async task.
+    @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API")
+    @discardableResult
+    func logPurchase(purchase: PurchaseEvent, completion: @escaping Completion) -> RequestTask {
+        return eventsApi.reportEvent(event: .purchase(purchase), completion: completion)
+    }
+    
+    /// Sends a hit event to Topsort's API
+    /// A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.
+    /// - Parameter purchase: A Purchase struct that contains a Session, the list product IDs.
+    /// - Returns an EventResponse or throws.
+    @available(iOS 13.0.0, *)
     func logPurchase(purchase: PurchaseEvent) async throws -> EventResponse {
         return try await eventsApi.reportEventAsync(event: .purchase(purchase))
     }
     
+    /// Gets an unique session ID to be sent to Topsort API
     func getSessionId() -> String {
         return "session_id"
     }

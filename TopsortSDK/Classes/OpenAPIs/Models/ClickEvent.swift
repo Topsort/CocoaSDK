@@ -11,7 +11,7 @@ import AnyCodable
 #endif
 
 /** ClickEvents are sent to Topsort when the consumer has clicked on an impression. Topsort charges the vendor and pays the marketplace for clicks on impressions in promoted placements on the e-commerce site. */
-public struct ClickEvent: Encodable, JSONEncodable, Hashable {
+public struct HitEvent: Encodable, JSONEncodable, Hashable {
 
     public var session: Session
     public var placement: Placement

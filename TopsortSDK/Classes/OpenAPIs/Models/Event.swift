@@ -5,7 +5,7 @@
 import Foundation
 
 public enum Event {
-    case click(ClickEvent)
+    case hit(HitEvent)
     case impression(ImpressionEvent)
     case purchase(PurchaseEvent)
 }

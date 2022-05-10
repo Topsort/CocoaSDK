@@ -1,6 +1,6 @@
-name: OpenAPIClient
+name: TopsortSDK
 targets:
-  OpenAPIClient:
+  TopsortSDK:
     type: framework
     platform: iOS
     deploymentTarget: "9.0"
