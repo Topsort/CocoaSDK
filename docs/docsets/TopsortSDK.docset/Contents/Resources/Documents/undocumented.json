@@ -316,6 +316,195 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Auction.swift",
+      "line": 13,
+      "symbol": "Auction",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Auction.swift",
+      "line": 15,
+      "symbol": "Auction.slots",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Auction.swift",
+      "line": 17,
+      "symbol": "Auction.init(slots:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Auction.swift",
+      "line": 21,
+      "symbol": "Auction.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Auction.swift",
+      "line": 22,
+      "symbol": "Auction.CodingKeys.slots",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/AuctionSlots.swift",
+      "line": 13,
+      "symbol": "AuctionSlots",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/AuctionSlots.swift",
+      "line": 15,
+      "symbol": "AuctionSlots.listings",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/AuctionSlots.swift",
+      "line": 17,
+      "symbol": "AuctionSlots.init(listings:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/AuctionSlots.swift",
+      "line": 21,
+      "symbol": "AuctionSlots.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/AuctionSlots.swift",
+      "line": 22,
+      "symbol": "AuctionSlots.CodingKeys.listings",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/AuctionSlotsListings.swift",
+      "line": 13,
+      "symbol": "AuctionSlotsListings",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/AuctionSlotsListings.swift",
+      "line": 20,
+      "symbol": "AuctionSlotsListings.init(auctionId:winners:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/AuctionSlotsListings.swift",
+      "line": 25,
+      "symbol": "AuctionSlotsListings.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/AuctionSlotsListings.swift",
+      "line": 26,
+      "symbol": "AuctionSlotsListings.CodingKeys.auctionId",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/AuctionSlotsListings.swift",
+      "line": 27,
+      "symbol": "AuctionSlotsListings.CodingKeys.winners",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannerOptions.swift",
+      "line": 16,
+      "symbol": "BannerOptions.Placement",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannerOptions.swift",
+      "line": 17,
+      "symbol": "BannerOptions.Placement.homePage",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannerOptions.swift",
+      "line": 18,
+      "symbol": "BannerOptions.Placement.categoryPage",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannerOptions.swift",
+      "line": 19,
+      "symbol": "BannerOptions.Placement.searchPage",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannerOptions.swift",
+      "line": 21,
+      "symbol": "BannerOptions.placement",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannerOptions.swift",
+      "line": 23,
+      "symbol": "BannerOptions.init(placement:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannerOptions.swift",
+      "line": 27,
+      "symbol": "BannerOptions.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannerOptions.swift",
+      "line": 28,
+      "symbol": "BannerOptions.CodingKeys.placement",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannersSlots.swift",
+      "line": 16,
+      "symbol": "BannersSlots.bannerAds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannersSlots.swift",
+      "line": 18,
+      "symbol": "BannersSlots.init(bannerAds:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannersSlots.swift",
+      "line": 22,
+      "symbol": "BannersSlots.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/BannersSlots.swift",
+      "line": 23,
+      "symbol": "BannersSlots.CodingKeys.bannerAds",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEvent.swift",
       "line": 16,
       "symbol": "HitEvent.session",
@@ -403,6 +592,83 @@
       "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEvent.swift",
       "line": 46,
       "symbol": "HitEvent.CodingKeys.resolvedBidId",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 13,
+      "symbol": "ClickEventAllOf",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 15,
+      "symbol": "ClickEventAllOf.placement",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 24,
+      "symbol": "ClickEventAllOf.resolvedBidId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 26,
+      "symbol": "ClickEventAllOf.init(placement:productId:auctionId:id:occurredAt:resolvedBidId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 35,
+      "symbol": "ClickEventAllOf.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 36,
+      "symbol": "ClickEventAllOf.CodingKeys.placement",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 37,
+      "symbol": "ClickEventAllOf.CodingKeys.productId",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 38,
+      "symbol": "ClickEventAllOf.CodingKeys.auctionId",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 39,
+      "symbol": "ClickEventAllOf.CodingKeys.id",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 40,
+      "symbol": "ClickEventAllOf.CodingKeys.occurredAt",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ClickEventAllOf.swift",
+      "line": 41,
+      "symbol": "ClickEventAllOf.CodingKeys.resolvedBidId",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -638,6 +904,48 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ImpressionEventAllOf.swift",
+      "line": 13,
+      "symbol": "ImpressionEventAllOf",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ImpressionEventAllOf.swift",
+      "line": 15,
+      "symbol": "ImpressionEventAllOf.impressions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ImpressionEventAllOf.swift",
+      "line": 19,
+      "symbol": "ImpressionEventAllOf.init(impressions:occurredAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ImpressionEventAllOf.swift",
+      "line": 24,
+      "symbol": "ImpressionEventAllOf.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ImpressionEventAllOf.swift",
+      "line": 25,
+      "symbol": "ImpressionEventAllOf.CodingKeys.impressions",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ImpressionEventAllOf.swift",
+      "line": 26,
+      "symbol": "ImpressionEventAllOf.CodingKeys.occurredAt",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/ImpressionResponse.swift",
       "line": 13,
       "symbol": "ImpressionResponse",
@@ -722,6 +1030,55 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Product.swift",
+      "line": 13,
+      "symbol": "Product",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Product.swift",
+      "line": 15,
+      "symbol": "Product.productId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Product.swift",
+      "line": 16,
+      "symbol": "Product.quality",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Product.swift",
+      "line": 18,
+      "symbol": "Product.init(productId:quality:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Product.swift",
+      "line": 23,
+      "symbol": "Product.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Product.swift",
+      "line": 24,
+      "symbol": "Product.CodingKeys.productId",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Product.swift",
+      "line": 25,
+      "symbol": "Product.CodingKeys.quality",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/PurchaseEvent.swift",
       "line": 25,
       "symbol": "PurchaseEvent.init(session:id:purchasedAt:items:)",
@@ -767,6 +1124,48 @@
       "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/PurchaseEvent.swift",
       "line": 37,
       "symbol": "PurchaseEvent.CodingKeys.items",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/PurchaseEventAllOf.swift",
+      "line": 13,
+      "symbol": "PurchaseEventAllOf",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/PurchaseEventAllOf.swift",
+      "line": 22,
+      "symbol": "PurchaseEventAllOf.init(id:purchasedAt:items:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/PurchaseEventAllOf.swift",
+      "line": 28,
+      "symbol": "PurchaseEventAllOf.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/PurchaseEventAllOf.swift",
+      "line": 29,
+      "symbol": "PurchaseEventAllOf.CodingKeys.id",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/PurchaseEventAllOf.swift",
+      "line": 30,
+      "symbol": "PurchaseEventAllOf.CodingKeys.purchasedAt",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/PurchaseEventAllOf.swift",
+      "line": 31,
+      "symbol": "PurchaseEventAllOf.CodingKeys.items",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -851,6 +1250,27 @@
       "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Session.swift",
       "line": 24,
       "symbol": "Session.CodingKeys.sessionId",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Slots.swift",
+      "line": 10,
+      "symbol": "Slots",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Slots.swift",
+      "line": 11,
+      "symbol": "Slots.sponsoredListings(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Slots.swift",
+      "line": 12,
+      "symbol": "Slots.bannerAds(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -1054,6 +1474,125 @@
       "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/TopsortError.swift",
       "line": 50,
       "symbol": "TopsortError.CodingKeys.message",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Vendor.swift",
+      "line": 13,
+      "symbol": "Vendor",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Vendor.swift",
+      "line": 15,
+      "symbol": "Vendor.vendorId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Vendor.swift",
+      "line": 17,
+      "symbol": "Vendor.init(vendorId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Vendor.swift",
+      "line": 21,
+      "symbol": "Vendor.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Vendor.swift",
+      "line": 22,
+      "symbol": "Vendor.CodingKeys.vendorId",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 13,
+      "symbol": "Winner",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 15,
+      "symbol": "Winner.WinnerType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 16,
+      "symbol": "Winner.WinnerType.product",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 17,
+      "symbol": "Winner.WinnerType.vendor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 32,
+      "symbol": "Winner.init(rank:productId:winnerType:winnerId:resolvedBidId:assetUrl:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 41,
+      "symbol": "Winner.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 42,
+      "symbol": "Winner.CodingKeys.rank",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 43,
+      "symbol": "Winner.CodingKeys.productId",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 44,
+      "symbol": "Winner.CodingKeys.winnerType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 45,
+      "symbol": "Winner.CodingKeys.winnerId",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 46,
+      "symbol": "Winner.CodingKeys.resolvedBidId",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/p/topsort/cocoa/TopsortSDK/TopsortSDK/Classes/OpenAPIs/Models/Winner.swift",
+      "line": 47,
+      "symbol": "Winner.CodingKeys.assetUrl",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },

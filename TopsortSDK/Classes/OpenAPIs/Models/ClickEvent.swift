@@ -10,7 +10,7 @@ import Foundation
 import AnyCodable
 #endif
 
-/** ClickEvents are sent to Topsort when the consumer has clicked on an impression. Topsort charges the vendor and pays the marketplace for clicks on impressions in promoted placements on the e-commerce site. */
+/** HitEvents are sent to Topsort when the consumer has clicked or tapped on an impression. Topsort charges the vendor and pays the marketplace for clicks on impressions in promoted placements on the e-commerce site. */
 public struct HitEvent: Encodable, JSONEncodable, Hashable {
 
     public var session: Session
