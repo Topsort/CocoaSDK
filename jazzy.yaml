@@ -2,7 +2,8 @@ author: Topsort
 author_url: https://topsort.com
 source-host: github
 swift_build_tool: xcodebuild
-documentation: docs/*.md
+theme: fullwidth
+clean: true
 xcodebuild_arguments:
   - "-scheme"
   - "TopsortSDK"
