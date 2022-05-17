@@ -2,20 +2,27 @@
 //  TopsortSDK.swift
 //  
 //
-//  Created by Pablo Reszczynski on 13-04-22.
+//
 //
 
 import Foundation
 
 /// Topsort iOS SDK
-/// - copyright: 2022 - Topsort Inc
+///
+/// Handles sending metrics to Topsort Analytics.
+///
+/// - copyright: 2022 - Topsort
 public final class TopsortSDK {
+    
+    /// A completion function for handling EventResponse
     public typealias Completion = ((_ data: EventResponse?, _ error: Error?) -> Void)
     
     private var url: String
     private var apiKey: String
     private var eventsApi: EventsAPI
     
+    /// - Parameter url: Your marketplace's auction engine endpoint
+    /// - Parameter apiKey: Your marketplace API Key
     init(url: String, apiKey: String) {
         self.url = url
         self.apiKey = apiKey
@@ -24,6 +31,7 @@ public final class TopsortSDK {
     
     /// Sends an impressions event to Topsort's API
     /// An impression is any product that has been rendered on screen.
+    /// Therefore this method should be called as soon as the product is rendered on the screen.
     /// - Parameter impressions: List of impressions that have been recorded in one render.
     /// - Parameter completion: A completion function that receives the EventResponse, or an error.
     /// - Returns: A cancelable async task.
@@ -40,6 +48,7 @@ public final class TopsortSDK {
     
     /// Sends an impressions event to Topsort's API
     /// An impression is any product that has been rendered on screen.
+    /// Therefore this method should be called as soon as the product is rendered on the screen.
     /// - Parameter impressions: List of impressions that have been recorded in one render.
     /// - Returns: an EventResponse
     /// - Throws:
