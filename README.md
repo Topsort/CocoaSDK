@@ -10,33 +10,12 @@ By using the [openapi-spec](https://github.com/OAI/OpenAPI-Specification) from a
 
 ## Installation
 
-### Carthage
+### With cocoapods
 
-Run `carthage update`
+```ruby
+target MyApp do
+  pod 'TopsortSDK', '~> 1.0.0'
+end
+```
 
-### CocoaPods
-
-Run `pod install`
-
-## Documentation for API Endpoints
-
-All URIs are relative to *https://demo.api.topsort.com/v1*
-
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*EventsAPI* | [**reportEvent**](docs/EventsAPI.md#reportevent) | **POST** /events | Report an event
-
-
-## Documentation For Models
-
- - [HitEvent](docs/HitEvent.md)
- - [EventResponse](docs/EventResponse.md)
- - [Impression](docs/Impression.md)
- - [ImpressionEvent](docs/ImpressionEvent.md)
- - [ImpressionResponse](docs/ImpressionResponse.md)
- - [Placement](docs/Placement.md)
- - [Product](docs/Product.md)
- - [PurchaseEvent](docs/PurchaseEvent.md)
- - [PurchaseItem](docs/PurchaseItem.md)
- - [Session](docs/Session.md)
- - [TopsortError](docs/TopsortError.md)
+And run `pod install`

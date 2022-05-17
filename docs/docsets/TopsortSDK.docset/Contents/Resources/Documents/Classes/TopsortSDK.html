@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TopsortSDK Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/TopsortSDK" class="dashAnchor"></a>
+
+    <a title="TopsortSDK Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          TopsortSDK 1.0.0 Docs
+        </a>
+         (51% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">TopsortSDK Reference</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      TopsortSDK Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RequestTask.html">RequestTask</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TopsortSDK.html">TopsortSDK</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/Event.html">Event</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EventResponse.html">EventResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/HitEvent.html">HitEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Impression.html">Impression</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ImpressionEvent.html">ImpressionEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ImpressionResponse.html">ImpressionResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Placement.html">Placement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/PurchaseEvent.html">PurchaseEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/PurchaseItem.html">PurchaseItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Session.html">Session</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TopsortError.html">TopsortError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TopsortError/ErrCode.html">– ErrCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TopsortError/DocUrl.html">– DocUrl</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>TopsortSDK</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">TopsortSDK</span></code></pre>
+
+                </div>
+              </div>
+            <p>Topsort iOS SDK</p>
+
+<p>Handles sending metrics to Topsort Analytics.</p>
+<div class="aside aside-copyright">
+    <p class="aside-title">Copyright</p>
+    2022 - Topsort
+
+</div>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10TopsortSDKAAC10Completiona"></a>
+                    <a name="//apple_ref/swift/Alias/Completion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10TopsortSDKAAC10Completiona">Completion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A completion function for handling EventResponse</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Completion</span> <span class="o">=</span> <span class="p">((</span><span class="n">_</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../Structs/EventResponse.html">EventResponse</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10TopsortSDKAAC14logImpressions11impressions10completionAA11RequestTaskCSayAA10ImpressionVG_yAA13EventResponseVSg_s5Error_pSgtctF"></a>
+                    <a name="//apple_ref/swift/Method/logImpressions(impressions:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10TopsortSDKAAC14logImpressions11impressions10completionAA11RequestTaskCSayAA10ImpressionVG_yAA13EventResponseVSg_s5Error_pSgtctF">logImpressions(impressions:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends an impressions event to Topsort&rsquo;s API
+An impression is any product that has been rendered on screen.
+Therefore this method should be called as soon as the product is rendered on the screen.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span><span class="p">,</span> <span class="nv">deprecated</span><span class="p">:</span> <span class="mf">13.0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"Please use the new Async API"</span><span class="p">)</span>
+<span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">logImpressions</span><span class="p">(</span><span class="nv">impressions</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Impression.html">Impression</a></span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Classes/TopsortSDK.html#/s:10TopsortSDKAAC10Completiona">Completion</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RequestTask.html">RequestTask</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>impressions</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>List of impressions that have been recorded in one render.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A completion function that receives the EventResponse, or an error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A cancelable async task.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10TopsortSDKAAC14logImpressions11impressionsAA13EventResponseVSayAA10ImpressionVG_tYaKF"></a>
+                    <a name="//apple_ref/swift/Method/logImpressions(impressions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10TopsortSDKAAC14logImpressions11impressionsAA13EventResponseVSayAA10ImpressionVG_tYaKF">logImpressions(impressions:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends an impressions event to Topsort&rsquo;s API
+An impression is any product that has been rendered on screen.
+Therefore this method should be called as soon as the product is rendered on the screen.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">logImpressions</span><span class="p">(</span><span class="nv">impressions</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Impression.html">Impression</a></span><span class="p">])</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/EventResponse.html">EventResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>impressions</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>List of impressions that have been recorded in one render.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an EventResponse</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10TopsortSDKAAC6logHit3hit10completionAA11RequestTaskCAA0D5EventV_yAA0I8ResponseVSg_s5Error_pSgtctF"></a>
+                    <a name="//apple_ref/swift/Method/logHit(hit:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10TopsortSDKAAC6logHit3hit10completionAA11RequestTaskCAA0D5EventV_yAA0I8ResponseVSg_s5Error_pSgtctF">logHit(hit:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a hit event to Topsort&rsquo;s API
+A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span><span class="p">,</span> <span class="nv">deprecated</span><span class="p">:</span> <span class="mf">13.0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"Please use the new Async API"</span><span class="p">)</span>
+<span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">logHit</span><span class="p">(</span><span class="nv">hit</span><span class="p">:</span> <span class="kt"><a href="../Structs/HitEvent.html">HitEvent</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Classes/TopsortSDK.html#/s:10TopsortSDKAAC10Completiona">Completion</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RequestTask.html">RequestTask</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>hit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Hit struct that contains a Session, the product ID, a placement on the App.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Completion function that receives the EventResponse, or an error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A cancelable async task.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10TopsortSDKAAC6logHit3hitAA13EventResponseVAA0dF0V_tYaKF"></a>
+                    <a name="//apple_ref/swift/Method/logHit(hit:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10TopsortSDKAAC6logHit3hitAA13EventResponseVAA0dF0V_tYaKF">logHit(hit:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a hit event to Topsort&rsquo;s API
+A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">logHit</span><span class="p">(</span><span class="nv">hit</span><span class="p">:</span> <span class="kt"><a href="../Structs/HitEvent.html">HitEvent</a></span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/EventResponse.html">EventResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>hit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Hit struct that contains a Session, the product ID, a placement on the App.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10TopsortSDKAAC11logPurchase8purchase10completionAA11RequestTaskCAA0D5EventV_yAA0I8ResponseVSg_s5Error_pSgtctF"></a>
+                    <a name="//apple_ref/swift/Method/logPurchase(purchase:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10TopsortSDKAAC11logPurchase8purchase10completionAA11RequestTaskCAA0D5EventV_yAA0I8ResponseVSg_s5Error_pSgtctF">logPurchase(purchase:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a purchase event to Topsort&rsquo;s API
+A purchase should be generated when a user completes a transaction to buy any number of products.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span><span class="p">,</span> <span class="nv">deprecated</span><span class="p">:</span> <span class="mf">13.0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"Please use the new Async API"</span><span class="p">)</span>
+<span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">logPurchase</span><span class="p">(</span><span class="nv">purchase</span><span class="p">:</span> <span class="kt"><a href="../Structs/PurchaseEvent.html">PurchaseEvent</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Classes/TopsortSDK.html#/s:10TopsortSDKAAC10Completiona">Completion</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RequestTask.html">RequestTask</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>purchase</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Purchase struct that contains a Session, the list product IDs.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Completion function that receives the EventResponse, or an error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A cancelable async task.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10TopsortSDKAAC11logPurchase8purchaseAA13EventResponseVAA0dF0V_tYaKF"></a>
+                    <a name="//apple_ref/swift/Method/logPurchase(purchase:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10TopsortSDKAAC11logPurchase8purchaseAA13EventResponseVAA0dF0V_tYaKF">logPurchase(purchase:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a hit event to Topsort&rsquo;s API
+A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">logPurchase</span><span class="p">(</span><span class="nv">purchase</span><span class="p">:</span> <span class="kt"><a href="../Structs/PurchaseEvent.html">PurchaseEvent</a></span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/EventResponse.html">EventResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>purchase</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Purchase struct that contains a Session, the list product IDs.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2022 <a class="link" href="https://topsort.com" target="_blank" rel="external noopener">Topsort</a>. All rights reserved. (Last updated: 2022-05-17)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>
