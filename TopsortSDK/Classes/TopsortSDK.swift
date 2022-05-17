@@ -23,7 +23,7 @@ public final class TopsortSDK {
     
     /// - Parameter url: Your marketplace's auction engine endpoint
     /// - Parameter apiKey: Your marketplace API Key
-    init(url: String, apiKey: String) {
+    public init(url: String, apiKey: String) {
         self.url = url
         self.apiKey = apiKey
         self.eventsApi = EventsAPI(basePath: url, apiKey: apiKey)
