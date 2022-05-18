@@ -53,6 +53,7 @@ public final class TopsortSDK {
     /// - Returns: an EventResponse
     /// - Throws:
     @available(iOS 13.0.0, *)
+    @discardableResult
     public func logImpressions(impressions: [Impression]) async throws -> EventResponse {
         let event = ImpressionEvent(
             session: Session(sessionId: getSessionId()),
@@ -78,6 +79,7 @@ public final class TopsortSDK {
     /// - Parameter hit: A Hit struct that contains a Session, the product ID, a placement on the App.
     /// - Returns an EventResponse or throws.
     @available(iOS 13.0.0, *)
+    @discardableResult
     public func logHit(hit: HitEvent) async throws -> EventResponse {
         return try await eventsApi.reportEventAsync(event: .hit(hit))
     }
@@ -98,6 +100,7 @@ public final class TopsortSDK {
     /// - Parameter purchase: A Purchase struct that contains a Session, the list product IDs.
     /// - Returns an EventResponse or throws.
     @available(iOS 13.0.0, *)
+    @discardableResult
     public func logPurchase(purchase: PurchaseEvent) async throws -> EventResponse {
         return try await eventsApi.reportEventAsync(event: .purchase(purchase))
     }

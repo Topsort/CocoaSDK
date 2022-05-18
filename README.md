@@ -40,6 +40,36 @@ let package = Package(
     )
   ]
 )
+
+## Usage
+
+### With SwiftUI
+
+#### Sending Hit Events whenever a product is tapped.
+
+```swift
+struct TopsortProduct : View {
+  var topsort: TopsortSDK
+  var auctionId: String?
+  var pageName: String
+  var productId: String
+
+  var body: some View {
+    MyProduct(...)
+    .onGestureTap() {
+      Task {
+        let event = HitEvent(
+          session: Session(sessionId: "deviceId"),
+          placement: Placement(page: pageName),
+          productId: productId,
+          auctionId: auctionId
+        )
+        try? await topsort.logHit(hitEvent)
+      }
+    }
+  }
+}
+```
 ```
 
 And run `swift package update`
