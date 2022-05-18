@@ -7,22 +7,21 @@
 
 import Foundation
 #if canImport(AnyCodable)
-import AnyCodable
+    import AnyCodable
 #endif
 
 /** The consumer has purchased some products. */
 public struct PurchaseEvent: Encodable, JSONEncodable, Hashable {
-
     /** Discriminator for the type of event. */
     public var session: Session
     /** The marketplace assigned ID for the order. */
     public var id: String
-    /** RFC3339 formatted timestamp including UTC offset */
+    /** Timestamp from when was the purchase completed */
     public var purchasedAt: Date
     /** Items purchased. */
     public var items: [PurchaseItem]
 
-    public init(session: Session, id: String, purchasedAt: Date, items: [PurchaseItem]) {
+    public init(session: Session, id: String, purchasedAt: Date = Date(), items: [PurchaseItem]) {
         self.session = session
         self.id = id
         self.purchasedAt = purchasedAt
@@ -48,4 +47,3 @@ public struct PurchaseEvent: Encodable, JSONEncodable, Hashable {
         try container.encode(items, forKey: .items)
     }
 }
-

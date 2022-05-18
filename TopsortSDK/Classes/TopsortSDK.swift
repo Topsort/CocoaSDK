@@ -1,6 +1,6 @@
 //
 //  TopsortSDK.swift
-//  
+//
 //
 //
 //
@@ -13,22 +13,21 @@ import Foundation
 ///
 /// - copyright: 2022 - Topsort
 public final class TopsortSDK {
-    
     /// A completion function for handling EventResponse
-    public typealias Completion = ((_ data: EventResponse?, _ error: Error?) -> Void)
-    
+    public typealias Completion = (_ data: EventResponse?, _ error: Error?) -> Void
+
     private var url: String
     private var apiKey: String
     private var eventsApi: EventsAPI
-    
+
     /// - Parameter url: Your marketplace's auction engine endpoint
     /// - Parameter apiKey: Your marketplace API Key
     public init(url: String, apiKey: String) {
         self.url = url
         self.apiKey = apiKey
-        self.eventsApi = EventsAPI(basePath: url, apiKey: apiKey)
+        eventsApi = EventsAPI(basePath: url, apiKey: apiKey)
     }
-    
+
     /// Sends an impressions event to Topsort's API
     /// An impression is any product that has been rendered on screen.
     /// Therefore this method should be called as soon as the product is rendered on the screen.
@@ -45,7 +44,7 @@ public final class TopsortSDK {
         )
         return eventsApi.reportEvent(event: .impression(event), completion: completion)
     }
-    
+
     /// Sends an impressions event to Topsort's API
     /// An impression is any product that has been rendered on screen.
     /// Therefore this method should be called as soon as the product is rendered on the screen.
@@ -62,7 +61,7 @@ public final class TopsortSDK {
         )
         return try await eventsApi.reportEventAsync(event: .impression(event))
     }
-    
+
     /// Sends a hit event to Topsort's API
     /// A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.
     /// - Parameter hit: A Hit struct that contains a Session, the product ID, a placement on the App.
@@ -73,7 +72,7 @@ public final class TopsortSDK {
     public func logHit(hit: HitEvent, completion: @escaping Completion) -> RequestTask {
         return eventsApi.reportEvent(event: .hit(hit), completion: completion)
     }
-    
+
     /// Sends a hit event to Topsort's API
     /// A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.
     /// - Parameter hit: A Hit struct that contains a Session, the product ID, a placement on the App.
@@ -83,7 +82,7 @@ public final class TopsortSDK {
     public func logHit(hit: HitEvent) async throws -> EventResponse {
         return try await eventsApi.reportEventAsync(event: .hit(hit))
     }
-    
+
     /// Sends a purchase event to Topsort's API
     /// A purchase should be generated when a user completes a transaction to buy any number of products.
     /// - Parameter purchase: A Purchase struct that contains a Session, the list product IDs.
@@ -94,7 +93,7 @@ public final class TopsortSDK {
     public func logPurchase(purchase: PurchaseEvent, completion: @escaping Completion) -> RequestTask {
         return eventsApi.reportEvent(event: .purchase(purchase), completion: completion)
     }
-    
+
     /// Sends a hit event to Topsort's API
     /// A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.
     /// - Parameter purchase: A Purchase struct that contains a Session, the list product IDs.
@@ -104,7 +103,7 @@ public final class TopsortSDK {
     public func logPurchase(purchase: PurchaseEvent) async throws -> EventResponse {
         return try await eventsApi.reportEventAsync(event: .purchase(purchase))
     }
-    
+
     /// Gets an unique session ID to be sent to Topsort API
     func getSessionId() -> String {
         return "session_id"

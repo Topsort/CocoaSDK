@@ -5,12 +5,12 @@
 //// https://openapi-generator.tech
 ////
 //
-//import Foundation
-//#if canImport(AnyCodable)
-//import AnyCodable
-//#endif
+// import Foundation
+// #if canImport(AnyCodable)
+// import AnyCodable
+// #endif
 //
-//open class AuctionsAPI {
+// open class AuctionsAPI {
 //
 //    /**
 //     Creates a new auction
@@ -57,4 +57,4 @@
 //
 //        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters)
 //    }
-//}
+// }

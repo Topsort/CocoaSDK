@@ -7,11 +7,10 @@
 
 import Foundation
 #if canImport(AnyCodable)
-import AnyCodable
+    import AnyCodable
 #endif
 
 public struct TopsortError: Codable, JSONEncodable, Hashable {
-
     public enum ErrCode: String, Codable, CaseIterable {
         case badRequest = "bad_request"
         case internalServerError = "internal_server_error"
@@ -31,9 +30,11 @@ public struct TopsortError: Codable, JSONEncodable, Hashable {
         case tooFewImpressions = "too_few_impressions"
         case tooFewSlots = "too_few_slots"
     }
+
     public enum DocUrl: String, Codable, CaseIterable {
         case httpsSlashSlashTopsortApiPeriodRedocPeriodLy = "https://topsort-api.redoc.ly"
     }
+
     public var errCode: ErrCode
     public var docUrl: DocUrl?
     public var message: String?
@@ -59,4 +60,3 @@ public struct TopsortError: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(message, forKey: .message)
     }
 }
-

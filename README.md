@@ -40,6 +40,9 @@ let package = Package(
     )
   ]
 )
+```
+
+And run `swift package update`
 
 ## Usage
 
@@ -70,6 +73,3 @@ struct TopsortProduct : View {
   }
 }
 ```
-```
-
-And run `swift package update`

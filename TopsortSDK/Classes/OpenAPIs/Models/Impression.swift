@@ -7,12 +7,10 @@
 
 import Foundation
 #if canImport(AnyCodable)
-import AnyCodable
+    import AnyCodable
 #endif
 
 public struct Impression: Encodable, JSONEncodable, Hashable {
-
-    public var placement: Placement
     /** The product that was rendered. */
     public var productId: String?
     /** Required for promoted products. Must be the ID for the auction the product won. */
@@ -21,8 +19,7 @@ public struct Impression: Encodable, JSONEncodable, Hashable {
     public var id: String?
     public var resolvedBidId: String?
 
-    public init(placement: Placement, productId: String? = nil, auctionId: String? = nil, id: String? = nil, resolvedBidId: String? = nil) {
-        self.placement = placement
+    public init(productId: String? = nil, auctionId: String? = nil, id: String? = nil, resolvedBidId: String? = nil) {
         self.productId = productId
         self.auctionId = auctionId
         self.id = id
@@ -30,7 +27,6 @@ public struct Impression: Encodable, JSONEncodable, Hashable {
     }
 
     private enum CodingKeys: String, CodingKey, CaseIterable {
-        case placement
         case productId
         case auctionId
         case id
@@ -41,11 +37,9 @@ public struct Impression: Encodable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(placement, forKey: .placement)
         try container.encodeIfPresent(productId, forKey: .productId)
         try container.encodeIfPresent(auctionId, forKey: .auctionId)
         try container.encodeIfPresent(id, forKey: .id)
         try container.encodeIfPresent(resolvedBidId, forKey: .resolvedBidId)
     }
 }
-

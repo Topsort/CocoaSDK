@@ -7,12 +7,11 @@
 
 import Foundation
 #if canImport(AnyCodable)
-import AnyCodable
+    import AnyCodable
 #endif
 
 /** A product has become visible to the consumer. In case you cannot send the impression when the product is visible, send us an impression event when the product was rendered in the HTML or if that&#39;s also not possible when your API returns the results. It is important to select the most specific event so that your vendors have more accurate CTR metrics, which allow them to better predict their campaigns. */
 public struct ImpressionEvent: Encodable, JSONEncodable, Hashable {
-
     public var session: Session
     public var impressions: [Impression]
     /** RFC3339 formatted timestamp including UTC offset */
@@ -41,4 +40,3 @@ public struct ImpressionEvent: Encodable, JSONEncodable, Hashable {
         try container.encodeIfPresent(occurredAt, forKey: .occurredAt)
     }
 }
-

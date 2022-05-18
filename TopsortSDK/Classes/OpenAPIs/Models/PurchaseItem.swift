@@ -7,11 +7,10 @@
 
 import Foundation
 #if canImport(AnyCodable)
-import AnyCodable
+    import AnyCodable
 #endif
 
 public struct PurchaseItem: Codable, JSONEncodable, Hashable {
-
     /** The marketplace ID of the product being purchased. */
     public var productId: String
     /** If known, the product's auction ID if the consumer clicked on a promoted link before purchasing. */
@@ -49,4 +48,3 @@ public struct PurchaseItem: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(resolvedBidId, forKey: .resolvedBidId)
     }
 }
-

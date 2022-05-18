@@ -6,7 +6,7 @@
 
 import Foundation
 #if !os(macOS)
-import MobileCoreServices
+    import MobileCoreServices
 #endif
 
 class URLSessionRequestBuilderFactory: RequestBuilderFactory {
@@ -19,7 +19,7 @@ class URLSessionRequestBuilderFactory: RequestBuilderFactory {
     }
 }
 
-typealias OpenAPIClientAPIChallengeHandler = ((URLSession, URLSessionTask, URLAuthenticationChallenge) -> (URLSession.AuthChallengeDisposition, URLCredential?))
+typealias OpenAPIClientAPIChallengeHandler = (URLSession, URLSessionTask, URLAuthenticationChallenge) -> (URLSession.AuthChallengeDisposition, URLCredential?)
 
 // Store the URLSession's delegate to retain its reference
 private let sessionDelegate = SessionDelegate()
@@ -34,7 +34,6 @@ private var challengeHandlerStore = SynchronizedDictionary<Int, OpenAPIClientAPI
 private var credentialStore = SynchronizedDictionary<Int, URLCredential>()
 
 internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
-
     /**
      May be assigned if you want to control the authentication challenges.
      */
@@ -49,7 +48,7 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
     @available(*, deprecated, message: "Please override execute() method to intercept and handle errors like authorization or retry the request. Check the Wiki for more info. https://github.com/OpenAPITools/openapi-generator/wiki/FAQ#how-do-i-implement-bearer-token-authentication-with-urlsession-on-the-swift-api-client")
     public var taskCompletionShouldRetry: ((Data?, URLResponse?, Error?, @escaping (Bool) -> Void) -> Void)?
 
-    required public init(method: String, URLString: String, parameters: [String: Any]?, headers: [String: String] = [:]) {
+    public required init(method: String, URLString: String, parameters: [String: Any]?, headers: [String: String] = [:]) {
         super.init(method: method, URLString: URLString, parameters: parameters, headers: headers)
     }
 
@@ -68,7 +67,7 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
      Return nil to use the default behavior (inferring the Content-Type from
      the file extension).  Return the desired Content-Type otherwise.
      */
-    open func contentTypeForFormPart(fileURL: URL) -> String? {
+    open func contentTypeForFormPart(fileURL _: URL) -> String? {
         return nil
     }
 
@@ -76,8 +75,7 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
      May be overridden by a subclass if you want to control the URLRequest
      configuration (e.g. to override the cache policy).
      */
-    open func createURLRequest(urlSession: URLSession, method: HTTPMethod, encoding: ParameterEncoding, headers: [String: String]) throws -> URLRequest {
-
+    open func createURLRequest(urlSession _: URLSession, method: HTTPMethod, encoding: ParameterEncoding, headers: [String: String]) throws -> URLRequest {
         guard let url = URL(string: URLString) else {
             throw DownloadException.requestMissingURL
         }
@@ -131,17 +129,16 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
             let request = try createURLRequest(urlSession: urlSession, method: xMethod, encoding: encoding, headers: headers)
 
             var taskIdentifier: Int?
-             let cleanupRequest = {
-                 if let taskIdentifier = taskIdentifier {
-                     challengeHandlerStore[taskIdentifier] = nil
-                     credentialStore[taskIdentifier] = nil
-                 }
-             }
+            let cleanupRequest = {
+                if let taskIdentifier = taskIdentifier {
+                    challengeHandlerStore[taskIdentifier] = nil
+                    credentialStore[taskIdentifier] = nil
+                }
+            }
 
             let dataTask = urlSession.dataTask(with: request) { data, response, error in
 
                 if let taskCompletionShouldRetry = self.taskCompletionShouldRetry {
-
                     taskCompletionShouldRetry(data, response, error) { shouldRetry in
 
                         if shouldRetry {
@@ -182,8 +179,7 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
         return requestTask
     }
 
-    fileprivate func processRequestResponse(urlRequest: URLRequest, data: Data?, response: URLResponse?, error: Error?, completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) {
-
+    fileprivate func processRequestResponse(urlRequest _: URLRequest, data: Data?, response: URLResponse?, error: Error?, completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) {
         if let error = error {
             completion(.failure(ErrorResponse.error(-1, data, response, error)))
             return
@@ -207,7 +203,6 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
         default:
             fatalError("Unsupported Response Body Type - \(String(describing: T.self))")
         }
-
     }
 
     open func buildHeaders() -> [String: String] {
@@ -222,7 +217,6 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
     }
 
     fileprivate func getFileName(fromContentDisposition contentDisposition: String?) -> String? {
-
         guard let contentDisposition = contentDisposition else {
             return nil
         }
@@ -232,7 +226,6 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
         var filename: String?
 
         for contentItem in items {
-
             let filenameKey = "filename="
             guard let range = contentItem.range(of: filenameKey) else {
                 continue
@@ -246,11 +239,9 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
         }
 
         return filename
-
     }
 
     fileprivate func getPath(from url: URL) throws -> String {
-
         guard var path = URLComponents(url: url, resolvingAgainstBaseURL: true)?.path else {
             throw DownloadException.requestMissingPath
         }
@@ -260,23 +251,19 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
         }
 
         return path
-
     }
 
     fileprivate func getURL(from urlRequest: URLRequest) throws -> URL {
-
         guard let url = urlRequest.url else {
             throw DownloadException.requestMissingURL
         }
 
         return url
     }
-
 }
 
 internal class URLSessionDecodableRequestBuilder<T: Decodable>: URLSessionRequestBuilder<T> {
     override fileprivate func processRequestResponse(urlRequest: URLRequest, data: Data?, response: URLResponse?, error: Error?, completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) {
-
         if let error = error {
             completion(.failure(ErrorResponse.error(-1, data, response, error)))
             return
@@ -301,7 +288,6 @@ internal class URLSessionDecodableRequestBuilder<T: Decodable>: URLSessionReques
 
         case is URL.Type:
             do {
-
                 guard error == nil else {
                     throw DownloadException.responseFailed
                 }
@@ -365,7 +351,6 @@ internal class URLSessionDecodableRequestBuilder<T: Decodable>: URLSessionReques
 
 private class SessionDelegate: NSObject, URLSessionTaskDelegate {
     func urlSession(_ session: URLSession, task: URLSessionTask, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-
         var disposition: URLSession.AuthChallengeDisposition = .performDefaultHandling
 
         var credential: URLCredential?
@@ -406,7 +391,6 @@ internal protocol ParameterEncoding {
 
 private class URLEncoding: ParameterEncoding {
     func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
-
         var urlRequest = urlRequest
 
         guard let parameters = parameters else { return urlRequest }
@@ -425,7 +409,6 @@ private class URLEncoding: ParameterEncoding {
 }
 
 private class FormDataEncoding: ParameterEncoding {
-
     let contentTypeForFormPart: (_ fileURL: URL) -> String?
 
     init(contentTypeForFormPart: @escaping (_ fileURL: URL) -> String?) {
@@ -433,7 +416,6 @@ private class FormDataEncoding: ParameterEncoding {
     }
 
     func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
-
         var urlRequest = urlRequest
 
         guard let parameters = parameters, !parameters.isEmpty else {
@@ -501,7 +483,6 @@ private class FormDataEncoding: ParameterEncoding {
     }
 
     private func configureFileUploadRequest(urlRequest: URLRequest, boundary: String, name: String, fileURL: URL) throws -> URLRequest {
-
         var urlRequest = urlRequest
 
         var body = urlRequest.httpBody.orEmpty
@@ -536,7 +517,6 @@ private class FormDataEncoding: ParameterEncoding {
     }
 
     private func configureDataUploadRequest(urlRequest: URLRequest, boundary: String, name: String, data: Data) -> URLRequest {
-
         var urlRequest = urlRequest
 
         var body = urlRequest.httpBody.orEmpty
@@ -561,7 +541,6 @@ private class FormDataEncoding: ParameterEncoding {
         urlRequest.httpBody = body
 
         return urlRequest
-
     }
 
     func mimeType(for url: URL) -> String {
@@ -574,12 +553,10 @@ private class FormDataEncoding: ParameterEncoding {
         }
         return "application/octet-stream"
     }
-
 }
 
 private class FormURLEncoding: ParameterEncoding {
     func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
-
         var urlRequest = urlRequest
 
         var requestBodyComponents = URLComponents()

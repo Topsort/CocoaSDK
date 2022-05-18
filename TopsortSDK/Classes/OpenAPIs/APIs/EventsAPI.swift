@@ -5,14 +5,13 @@
 // https://openapi-generator.tech
 //
 
-import Foundation
 import AnyCodable
+import Foundation
 
 class EventsAPI {
-    
     private var basePath: String
     private var apiKey: String
-    
+
     public init(basePath: String, apiKey: String) {
         self.basePath = basePath
         self.apiKey = apiKey
@@ -20,7 +19,7 @@ class EventsAPI {
 
     /**
      Report an event
-     
+
      - parameter event: (body) Use the /events; endpoint to notify Topsort about significant consumer interactions on the e-commerce site: impressions -- product links become visible to the consumer; clicks -- the consumer clicks on a product link; and purchases -- the consumer buys some products.
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
@@ -36,18 +35,18 @@ class EventsAPI {
             }
         }
     }
-    
+
     @available(iOS 13.0.0, *)
     func reportEventAsync(event: Event) async throws -> EventResponse {
-        return try await withCheckedThrowingContinuation({ continuation in
-            reportEvent(event: event, completion: { result, error  in
-                if (error != nil) {
+        return try await withCheckedThrowingContinuation { continuation in
+            reportEvent(event: event, completion: { result, error in
+                if error != nil {
                     continuation.resume(throwing: error!)
                 } else {
                     continuation.resume(with: .success(result!))
                 }
             })
-        })
+        }
     }
 
     /**
@@ -57,20 +56,19 @@ class EventsAPI {
        - type: http
        - name: BearerAuth
      - parameter event: (body) Use the &#x60;/events&#x60; endpoint to notify Topsort about significant consumer interactions on the e-commerce site: impressions -- product links become visible to the consumer; clicks -- the consumer clicks on a product link; and purchases -- the consumer buys some products.
-     - returns: RequestBuilder<EventResponse> 
+     - returns: RequestBuilder<EventResponse>
      */
     func reportEventWithRequestBuilder(event: Event) -> RequestBuilder<EventResponse> {
         let localVariablePath = "/events"
-        let localVariableURLString = self.basePath + localVariablePath
+        let localVariableURLString = basePath + localVariablePath
         var localVariableParameters: [String: Any]?
         switch event {
-            case let .impression(impressionEvent):
-                localVariableParameters =   JSONEncodingHelper.encodingParameters(forEncodableObject: impressionEvent)
-            case let .hit(clickEvent):
-                localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: clickEvent)
-            case let .purchase(purchaseEvent):
-                localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: purchaseEvent)
-            
+        case let .impression(impressionEvent):
+            localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: impressionEvent)
+        case let .hit(clickEvent):
+            localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: clickEvent)
+        case let .purchase(purchaseEvent):
+            localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: purchaseEvent)
         }
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
@@ -78,13 +76,13 @@ class EventsAPI {
         let localVariableNillableHeaders: [String: Any?] = [
             "Authorization": "Bearer " + apiKey,
             "User-Agent": "iOS Topsort SDK",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         ]
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
         let localVariableRequestBuilder: RequestBuilder<EventResponse>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters)
+        return localVariableRequestBuilder.init(method: "POST", URLString: localVariableUrlComponents?.string ?? localVariableURLString, parameters: localVariableParameters, headers: localVariableHeaderParameters)
     }
 }

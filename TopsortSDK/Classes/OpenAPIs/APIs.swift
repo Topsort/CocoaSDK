@@ -13,7 +13,7 @@ import Foundation
 @available(*, deprecated, renamed: "OpenAPIClientAPI")
 internal typealias OpenAPIClient = OpenAPIClientAPI
 
-internal class OpenAPIClientAPI {
+internal enum OpenAPIClientAPI {
     public static var customHeaders: [String: String] = [:]
     public static var credential: URLCredential?
     public static var requestBuilderFactory: RequestBuilderFactory = URLSessionRequestBuilderFactory()
@@ -26,14 +26,14 @@ internal class RequestBuilder<T> {
     public let parameters: [String: Any]?
     public let method: String
     public let URLString: String
-    public let requestTask: RequestTask = RequestTask()
+    public let requestTask: RequestTask = .init()
 
     /// Optional block to obtain a reference to the request's progress instance when available.
     /// With the URLSession http client the request's progress only works on iOS 11.0, macOS 10.13, macCatalyst 13.0, tvOS 11.0, watchOS 4.0.
     /// If you need to get the request's progress in older OS versions, please use Alamofire http client.
     public var onProgressReady: ((Progress) -> Void)?
 
-    required public init(method: String, URLString: String, parameters: [String: Any]?, headers: [String: String] = [:]) {
+    public required init(method: String, URLString: String, parameters: [String: Any]?, headers: [String: String] = [:]) {
         self.method = method
         self.URLString = URLString
         self.parameters = parameters
@@ -49,7 +49,7 @@ internal class RequestBuilder<T> {
     }
 
     @discardableResult
-    open func execute(_ apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, _ completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) -> RequestTask {
+    open func execute(_: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, _: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) -> RequestTask {
         return requestTask
     }
 

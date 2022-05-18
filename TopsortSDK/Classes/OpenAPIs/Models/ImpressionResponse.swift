@@ -7,11 +7,10 @@
 
 import Foundation
 #if canImport(AnyCodable)
-import AnyCodable
+    import AnyCodable
 #endif
 
 public struct ImpressionResponse: Codable, JSONEncodable, Hashable {
-
     public var id: String?
     public var impressionId: String?
 
@@ -33,4 +32,3 @@ public struct ImpressionResponse: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(impressionId, forKey: .impressionId)
     }
 }
-

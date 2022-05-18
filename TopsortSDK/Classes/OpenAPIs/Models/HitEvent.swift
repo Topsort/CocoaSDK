@@ -7,27 +7,24 @@
 
 import Foundation
 #if canImport(AnyCodable)
-import AnyCodable
+    import AnyCodable
 #endif
 
-/** HitEvents are sent to Topsort when the consumer has clicked or tapped on an impression. Topsort charges the vendor and pays the marketplace for clicks on impressions in promoted placements on the e-commerce site. */
+/** HitEvents are sent to Topsort when the consumer has clicked or tapped on a product impression. Topsort charges the vendor and pays the marketplace for clicks on impressions in promoted placements on the e-commerce app. */
 public struct HitEvent: Encodable, JSONEncodable, Hashable {
-
     public var session: Session
-    public var placement: Placement
     /** The product that was clicked. */
     public var productId: String?
     /** Required for promoted products. Must be the ID for the auction the product won. */
     public var auctionId: String?
     /** The marketplace's unique ID for the click. */
     public var id: String?
-    /** RFC3339 formatted timestamp including UTC offset */
-    public var occurredAt: Date?
+    /** When did the hit happen */
+    public var occurredAt: Date
     public var resolvedBidId: String?
 
-    public init(session: Session, placement: Placement, productId: String? = nil, auctionId: String? = nil, id: String? = nil, occurredAt: Date? = nil, resolvedBidId: String? = nil) {
+    public init(session: Session, productId: String? = nil, auctionId: String? = nil, id: String? = nil, occurredAt: Date = Date(), resolvedBidId: String? = nil) {
         self.session = session
-        self.placement = placement
         self.productId = productId
         self.auctionId = auctionId
         self.id = id
@@ -38,7 +35,6 @@ public struct HitEvent: Encodable, JSONEncodable, Hashable {
     private enum CodingKeys: String, CodingKey, CaseIterable {
         case eventType
         case session
-        case placement
         case productId
         case auctionId
         case id
@@ -52,7 +48,6 @@ public struct HitEvent: Encodable, JSONEncodable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode("Click", forKey: .eventType)
         try container.encode(session, forKey: .session)
-        try container.encode(placement, forKey: .placement)
         try container.encodeIfPresent(productId, forKey: .productId)
         try container.encodeIfPresent(auctionId, forKey: .auctionId)
         try container.encodeIfPresent(id, forKey: .id)
@@ -60,4 +55,3 @@ public struct HitEvent: Encodable, JSONEncodable, Hashable {
         try container.encodeIfPresent(resolvedBidId, forKey: .resolvedBidId)
     }
 }
-
