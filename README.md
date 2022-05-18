@@ -54,7 +54,6 @@ And run `swift package update`
 struct TopsortProduct : View {
   var topsort: TopsortSDK
   var auctionId: String?
-  var pageName: String
   var productId: String
 
   var body: some View {
