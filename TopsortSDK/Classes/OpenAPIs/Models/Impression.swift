@@ -10,6 +10,7 @@ import Foundation
     import AnyCodable
 #endif
 
+/// An Impression is any rendering of a product in the app.
 public struct Impression: Encodable, JSONEncodable, Hashable {
     /** The product that was rendered. */
     public var productId: String?

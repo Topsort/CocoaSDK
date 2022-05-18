@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           TopsortSDK 1.0.0 Docs
         </a>
-         (52% documented)
+         (59% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -123,9 +123,9 @@
 
                 </div>
               </div>
-            <p>Topsort iOS SDK</p>
+            <h1 id='overview' class='heading'>Overview</h1>
 
-<p>Handles sending metrics to Topsort Analytics.</p>
+<p>The Topsort Analytics SDK for iOS is a utilty library for logging events to Topsort&rsquo;s Events API.</p>
 <div class="aside aside-copyright">
     <p class="aside-title">Copyright</p>
     2022 - Topsort
@@ -236,8 +236,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sends an impressions event to Topsort&rsquo;s API
-An impression is any product that has been rendered on screen.
+                        <p>Sends an impressions event to Topsort&rsquo;s API</p>
+
+<p>An impression is any product that has been rendered on screen.
 Therefore this method should be called as soon as the product is rendered on the screen.</p>
 
                       </div>
@@ -305,12 +306,14 @@ Therefore this method should be called as soon as the product is rendered on the
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sends an impressions event to Topsort&rsquo;s API
-An impression is any product that has been rendered on screen.
+                        <p>Sends an impressions event to Topsort&rsquo;s API</p>
+
+<p>An impression is any product that has been rendered on screen.
 Therefore this method should be called as soon as the product is rendered on the screen.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
-    
+    <p><code><a href="../Structs/TopsortError.html">TopsortError</a></code></p>
+
 </div>
 
                       </div>
@@ -363,8 +366,9 @@ Therefore this method should be called as soon as the product is rendered on the
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sends a hit event to Topsort&rsquo;s API
-A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.</p>
+                        <p>Sends a hit event to Topsort&rsquo;s API</p>
+
+<p>A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.</p>
 
                       </div>
                       <div class="declaration">
@@ -431,8 +435,14 @@ A hit is any user triggered event (a tap, or a click) that the user makes on a p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sends a hit event to Topsort&rsquo;s API
-A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.</p>
+                        <p>Sends a hit event to Topsort&rsquo;s API</p>
+
+<p>A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Structs/TopsortError.html">TopsortError</a></code>.
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -464,6 +474,10 @@ A hit is any user triggered event (a tap, or a click) that the user makes on a p
                           </tbody>
                         </table>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an EventResponse</p>
+                      </div>
                     </section>
                   </div>
                 </li>
@@ -480,8 +494,9 @@ A hit is any user triggered event (a tap, or a click) that the user makes on a p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sends a purchase event to Topsort&rsquo;s API
-A purchase should be generated when a user completes a transaction to buy any number of products.</p>
+                        <p>Sends a purchase event to Topsort&rsquo;s API</p>
+
+<p>A purchase should be generated when a user completes a transaction to buy any number of products.</p>
 
                       </div>
                       <div class="declaration">
@@ -506,7 +521,7 @@ A purchase should be generated when a user completes a transaction to buy any nu
                               </td>
                               <td>
                                 <div>
-                                  <p>A Purchase struct that contains a Session, the list product IDs.</p>
+                                  <p>A <code><a href="../Structs/PurchaseEvent.html">PurchaseEvent</a></code> struct that contains a Session, the list product IDs.</p>
                                 </div>
                               </td>
                             </tr>
@@ -518,7 +533,7 @@ A purchase should be generated when a user completes a transaction to buy any nu
                               </td>
                               <td>
                                 <div>
-                                  <p>A Completion function that receives the EventResponse, or an error.</p>
+                                  <p>A  Completion function that receives the <code><a href="../Structs/EventResponse.html">EventResponse</a></code>, or an error.</p>
                                 </div>
                               </td>
                             </tr>
@@ -548,8 +563,14 @@ A purchase should be generated when a user completes a transaction to buy any nu
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sends a hit event to Topsort&rsquo;s API
-A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.</p>
+                        <p>Sends a hit event to Topsort&rsquo;s API as a click.</p>
+
+<p>A hit is any user triggered event (a tap, or a gesture) that the user makes on a product on your marketplace, sponsored or not.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p><code><a href="../Structs/TopsortError.html">TopsortError</a></code></p>
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -574,12 +595,16 @@ A hit is any user triggered event (a tap, or a click) that the user makes on a p
                               </td>
                               <td>
                                 <div>
-                                  <p>A Purchase struct that contains a Session, the list product IDs.</p>
+                                  <p>A <code><a href="../Structs/PurchaseEvent.html">PurchaseEvent</a></code> struct that contains a Session, the list product IDs.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code><a href="../Structs/EventResponse.html">EventResponse</a></code>.</p>
                       </div>
                     </section>
                   </div>

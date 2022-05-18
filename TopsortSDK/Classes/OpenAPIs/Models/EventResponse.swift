@@ -10,15 +10,20 @@ import Foundation
     import AnyCodable
 #endif
 
+/// Topsort's API response for events
 public struct EventResponse: Codable, JSONEncodable, Hashable {
     public var id: String?
-    public var clickId: String?
+
+    /// The unique ID for a HitEvent. Non nil  for ``TopsortSDK/TopsortSDK/logHit(hit:)`` calls.
+    public var hitId: String?
+    /// Unique ID for each impression sent on ``ImpressionEvent``. Non nil for ``TopsortSDK/TopsortSDK/logImpressions(impressions:)`` calls.
     public var impressions: [ImpressionResponse]?
+    /// Unique ID for a purchase event. Non nil for ``TopsortSDK/TopsortSDK/logPurchase(purchase:)`` calls.
     public var purchaseId: String?
 
-    public init(id: String? = nil, clickId: String? = nil, impressions: [ImpressionResponse]? = nil, purchaseId: String? = nil) {
+    public init(id: String? = nil, hitId: String? = nil, impressions: [ImpressionResponse]? = nil, purchaseId: String? = nil) {
         self.id = id
-        self.clickId = clickId
+        self.hitId = hitId
         self.impressions = impressions
         self.purchaseId = purchaseId
     }
@@ -35,8 +40,16 @@ public struct EventResponse: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(id, forKey: .id)
-        try container.encodeIfPresent(clickId, forKey: .clickId)
+        try container.encodeIfPresent(hitId, forKey: .clickId)
         try container.encodeIfPresent(impressions, forKey: .impressions)
         try container.encodeIfPresent(purchaseId, forKey: .purchaseId)
+    }
+
+    public init(from: Decoder) throws {
+        let container = try from.container(keyedBy: CodingKeys.self)
+        id = try container.decodeIfPresent(String.self, forKey: .id)
+        hitId = try container.decodeIfPresent(String.self, forKey: .clickId)
+        impressions = try container.decodeIfPresent([ImpressionResponse].self, forKey: .impressions)
+        purchaseId = try container.decodeIfPresent(String.self, forKey: .purchaseId)
     }
 }

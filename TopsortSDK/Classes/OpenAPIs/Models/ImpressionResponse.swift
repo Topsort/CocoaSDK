@@ -10,6 +10,7 @@ import Foundation
     import AnyCodable
 #endif
 
+/// Topsort  API response for a single ``ImpressionEvent``.
 public struct ImpressionResponse: Codable, JSONEncodable, Hashable {
     public var id: String?
     public var impressionId: String?

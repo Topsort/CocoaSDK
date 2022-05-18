@@ -10,6 +10,7 @@ import Foundation
     import AnyCodable
 #endif
 
+/// A description of the error sent by the Topsort API
 public struct TopsortError: Codable, JSONEncodable, Hashable {
     public enum ErrCode: String, Codable, CaseIterable {
         case badRequest = "bad_request"
@@ -19,7 +20,6 @@ public struct TopsortError: Codable, JSONEncodable, Hashable {
         case invalidEventType = "invalid_event_type"
         case invalidPromotionType = "invalid_promotion_type"
         case invalidSession = "invalid_session"
-        case missingPlacement = "missing_placement"
         case missingProductId = "missing_product_id"
         case missingPromotionType = "missing_promotion_type"
         case missingPurchasedAt = "missing_purchased_at"

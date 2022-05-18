@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           TopsortSDK 1.0.0 Docs
         </a>
-         (52% documented)
+         (59% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -123,7 +123,7 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>Topsort&rsquo;s API response for events</p>
 
           </div>
         </section>
@@ -162,9 +162,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10TopsortSDK13EventResponseV7clickIdSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/clickId" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10TopsortSDK13EventResponseV7clickIdSSSgvp">clickId</a>
+                    <a name="/s:10TopsortSDK13EventResponseV5hitIdSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/hitId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10TopsortSDK13EventResponseV5hitIdSSSgvp">hitId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -172,14 +172,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The unique ID for a HitEvent. Non nil  for <code>TopsortSDK/TopsortSDK/logHit(hit:)</code> calls.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">clickId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hitId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -199,7 +199,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Unique ID for each impression sent on <code><a href="../Structs/ImpressionEvent.html">ImpressionEvent</a></code>. Non nil for <code>TopsortSDK/TopsortSDK/logImpressions(impressions:)</code> calls.</p>
 
                       </div>
                       <div class="declaration">
@@ -226,7 +226,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Unique ID for a purchase event. Non nil for <code>TopsortSDK/TopsortSDK/logPurchase(purchase:)</code> calls.</p>
 
                       </div>
                       <div class="declaration">
@@ -243,9 +243,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10TopsortSDK13EventResponseV2id7clickId11impressions08purchaseG0ACSSSg_AHSayAA010ImpressionD0VGSgAHtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(id:clickId:impressions:purchaseId:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10TopsortSDK13EventResponseV2id7clickId11impressions08purchaseG0ACSSSg_AHSayAA010ImpressionD0VGSgAHtcfc">init(id:<wbr>clickId:<wbr>impressions:<wbr>purchaseId:<wbr>)</a>
+                    <a name="/s:10TopsortSDK13EventResponseV2id5hitId11impressions08purchaseG0ACSSSg_AHSayAA010ImpressionD0VGSgAHtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(id:hitId:impressions:purchaseId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10TopsortSDK13EventResponseV2id5hitId11impressions08purchaseG0ACSSSg_AHSayAA010ImpressionD0VGSgAHtcfc">init(id:<wbr>hitId:<wbr>impressions:<wbr>purchaseId:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -260,7 +260,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">clickId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">impressions</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/ImpressionResponse.html">ImpressionResponse</a></span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">purchaseId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">hitId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">impressions</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/ImpressionResponse.html">ImpressionResponse</a></span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">purchaseId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -287,6 +287,32 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="nv">encoder</span><span class="p">:</span> <span class="kt">Encoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Se4fromxs7Decoder_p_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Se4fromxs7Decoder_p_tKcfc">init(from:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>

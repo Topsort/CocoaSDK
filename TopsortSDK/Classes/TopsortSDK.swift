@@ -1,15 +1,13 @@
 //
 //  TopsortSDK.swift
 //
-//
-//
-//
 
 import Foundation
 
-/// Topsort iOS SDK
+/// # Overview
 ///
-/// Handles sending metrics to Topsort Analytics.
+/// The Topsort Analytics SDK for iOS is a utilty library for logging events to Topsort's Events API.
+///
 ///
 /// - copyright: 2022 - Topsort
 public final class TopsortSDK {
@@ -29,10 +27,13 @@ public final class TopsortSDK {
     }
 
     /// Sends an impressions event to Topsort's API
+    ///
     /// An impression is any product that has been rendered on screen.
     /// Therefore this method should be called as soon as the product is rendered on the screen.
+    ///
     /// - Parameter impressions: List of impressions that have been recorded in one render.
     /// - Parameter completion: A completion function that receives the EventResponse, or an error.
+    ///
     /// - Returns: A cancelable async task.
     @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API")
     @discardableResult
@@ -46,11 +47,15 @@ public final class TopsortSDK {
     }
 
     /// Sends an impressions event to Topsort's API
+    ///
     /// An impression is any product that has been rendered on screen.
     /// Therefore this method should be called as soon as the product is rendered on the screen.
+    ///
     /// - Parameter impressions: List of impressions that have been recorded in one render.
+    ///
     /// - Returns: an EventResponse
-    /// - Throws:
+    ///
+    /// - Throws: `TopsortError`
     @available(iOS 13.0.0, *)
     @discardableResult
     public func logImpressions(impressions: [Impression]) async throws -> EventResponse {
@@ -63,9 +68,12 @@ public final class TopsortSDK {
     }
 
     /// Sends a hit event to Topsort's API
+    ///
     /// A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.
+    ///
     /// - Parameter hit: A Hit struct that contains a Session, the product ID, a placement on the App.
     /// - Parameter completion: A Completion function that receives the EventResponse, or an error.
+    ///
     /// - Returns: A cancelable async task.
     @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API")
     @discardableResult
@@ -74,9 +82,12 @@ public final class TopsortSDK {
     }
 
     /// Sends a hit event to Topsort's API
+    ///
     /// A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.
+    ///
     /// - Parameter hit: A Hit struct that contains a Session, the product ID, a placement on the App.
-    /// - Returns an EventResponse or throws.
+    /// - Returns: an EventResponse
+    /// - Throws: ``TopsortError``.
     @available(iOS 13.0.0, *)
     @discardableResult
     public func logHit(hit: HitEvent) async throws -> EventResponse {
@@ -84,9 +95,12 @@ public final class TopsortSDK {
     }
 
     /// Sends a purchase event to Topsort's API
+    ///
     /// A purchase should be generated when a user completes a transaction to buy any number of products.
-    /// - Parameter purchase: A Purchase struct that contains a Session, the list product IDs.
-    /// - Parameter completion: A Completion function that receives the EventResponse, or an error.
+    ///
+    /// - Parameter purchase: A ``PurchaseEvent`` struct that contains a Session, the list product IDs.
+    /// - Parameter completion: A  Completion function that receives the ``EventResponse``, or an error.
+    ///
     /// - Returns: A cancelable async task.
     @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API")
     @discardableResult
@@ -94,10 +108,15 @@ public final class TopsortSDK {
         return eventsApi.reportEvent(event: .purchase(purchase), completion: completion)
     }
 
-    /// Sends a hit event to Topsort's API
-    /// A hit is any user triggered event (a tap, or a click) that the user makes on a product on your marketplace, sponsored or not.
-    /// - Parameter purchase: A Purchase struct that contains a Session, the list product IDs.
-    /// - Returns an EventResponse or throws.
+    /// Sends a hit event to Topsort's API as a click.
+    ///
+    /// A hit is any user triggered event (a tap, or a gesture) that the user makes on a product on your marketplace, sponsored or not.
+    ///
+    /// - Parameter purchase: A ``PurchaseEvent`` struct that contains a Session, the list product IDs.
+    ///
+    /// - Returns: ``EventResponse``.
+    ///
+    /// - Throws: ``TopsortError``
     @available(iOS 13.0.0, *)
     @discardableResult
     public func logPurchase(purchase: PurchaseEvent) async throws -> EventResponse {
