@@ -63,7 +63,6 @@ struct TopsortProduct : View {
       Task {
         let event = HitEvent(
           session: Session(sessionId: "deviceId"),
-          placement: Placement(page: pageName),
           productId: productId,
           auctionId: auctionId
         )
