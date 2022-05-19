@@ -15,7 +15,7 @@ final class TopsortSDKTest: XCTestCase {
         let impressions = [
             Impression(),
         ]
-        let result = try await sdk.logImpressions(impressions: impressions)
+        let result = try await sdk.logImpressionsAsync(impressions: impressions)
         print(result)
         XCTAssertNotNil(result)
     }

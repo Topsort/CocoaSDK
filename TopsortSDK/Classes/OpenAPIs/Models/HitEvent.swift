@@ -12,7 +12,6 @@ import Foundation
 
 /** HitEvents are sent to Topsort when the consumer has clicked or tapped on a product impression. Topsort charges the vendor and pays the marketplace for clicks on impressions in promoted placements on the e-commerce app. */
 public struct HitEvent: Encodable, JSONEncodable, Hashable {
-    public var session: Session
     /** The product that was clicked. */
     public var productId: String?
     /** Required for promoted products. Must be the ID for the auction the product won. */
@@ -23,8 +22,7 @@ public struct HitEvent: Encodable, JSONEncodable, Hashable {
     public var occurredAt: Date
     public var resolvedBidId: String?
 
-    public init(session: Session, productId: String? = nil, auctionId: String? = nil, id: String? = nil, occurredAt: Date = Date(), resolvedBidId: String? = nil) {
-        self.session = session
+    public init(productId: String? = nil, auctionId: String? = nil, id: String? = nil, occurredAt: Date = Date(), resolvedBidId: String? = nil) {
         self.productId = productId
         self.auctionId = auctionId
         self.id = id
@@ -45,6 +43,7 @@ public struct HitEvent: Encodable, JSONEncodable, Hashable {
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
+        let session = Session(sessionId: getSessionId())
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode("Click", forKey: .eventType)
         try container.encode(session, forKey: .session)

@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// # Overview
 ///
@@ -35,11 +36,10 @@ public final class TopsortSDK {
     /// - Parameter completion: A completion function that receives the EventResponse, or an error.
     ///
     /// - Returns: A cancelable async task.
-    @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API")
+    @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API", renamed: "logImpressionsAsync")
     @discardableResult
     public func logImpressions(impressions: [Impression], completion: @escaping Completion) -> RequestTask {
         let event = ImpressionEvent(
-            session: Session(sessionId: getSessionId()),
             impressions: impressions,
             occurredAt: Date()
         )
@@ -58,9 +58,8 @@ public final class TopsortSDK {
     /// - Throws: `TopsortError`
     @available(iOS 13.0.0, *)
     @discardableResult
-    public func logImpressions(impressions: [Impression]) async throws -> EventResponse {
+    public func logImpressionsAsync(impressions: [Impression]) async throws -> EventResponse {
         let event = ImpressionEvent(
-            session: Session(sessionId: getSessionId()),
             impressions: impressions,
             occurredAt: Date()
         )
@@ -75,7 +74,7 @@ public final class TopsortSDK {
     /// - Parameter completion: A Completion function that receives the EventResponse, or an error.
     ///
     /// - Returns: A cancelable async task.
-    @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API")
+    @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API", renamed: "logHitAsync")
     @discardableResult
     public func logHit(hit: HitEvent, completion: @escaping Completion) -> RequestTask {
         return eventsApi.reportEvent(event: .hit(hit), completion: completion)
@@ -90,7 +89,7 @@ public final class TopsortSDK {
     /// - Throws: ``TopsortError``.
     @available(iOS 13.0.0, *)
     @discardableResult
-    public func logHit(hit: HitEvent) async throws -> EventResponse {
+    public func logHitAsync(hit: HitEvent) async throws -> EventResponse {
         return try await eventsApi.reportEventAsync(event: .hit(hit))
     }
 
@@ -102,7 +101,7 @@ public final class TopsortSDK {
     /// - Parameter completion: A  Completion function that receives the ``EventResponse``, or an error.
     ///
     /// - Returns: A cancelable async task.
-    @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API")
+    @available(iOS, deprecated: 13.0.0, message: "Please use the new Async API", renamed: "logPurchaseAsync")
     @discardableResult
     public func logPurchase(purchase: PurchaseEvent, completion: @escaping Completion) -> RequestTask {
         return eventsApi.reportEvent(event: .purchase(purchase), completion: completion)
@@ -119,12 +118,7 @@ public final class TopsortSDK {
     /// - Throws: ``TopsortError``
     @available(iOS 13.0.0, *)
     @discardableResult
-    public func logPurchase(purchase: PurchaseEvent) async throws -> EventResponse {
+    public func logPurchaseAsync(purchase: PurchaseEvent) async throws -> EventResponse {
         return try await eventsApi.reportEventAsync(event: .purchase(purchase))
-    }
-
-    /// Gets an unique session ID to be sent to Topsort API
-    func getSessionId() -> String {
-        return "session_id"
     }
 }

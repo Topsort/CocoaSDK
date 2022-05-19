@@ -12,8 +12,6 @@ import Foundation
 
 /** The consumer has purchased some products. */
 public struct PurchaseEvent: Encodable, JSONEncodable, Hashable {
-    /** Discriminator for the type of event. */
-    public var session: Session
     /** The marketplace assigned ID for the order. */
     public var id: String
     /** Timestamp from when was the purchase completed */
@@ -21,8 +19,7 @@ public struct PurchaseEvent: Encodable, JSONEncodable, Hashable {
     /** Items purchased. */
     public var items: [PurchaseItem]
 
-    public init(session: Session, id: String, purchasedAt: Date = Date(), items: [PurchaseItem]) {
-        self.session = session
+    public init(id: String, purchasedAt: Date = Date(), items: [PurchaseItem]) {
         self.id = id
         self.purchasedAt = purchasedAt
         self.items = items
@@ -39,6 +36,7 @@ public struct PurchaseEvent: Encodable, JSONEncodable, Hashable {
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
+        let session = Session(sessionId: getSessionId())
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode("Purchase", forKey: .eventType)
         try container.encode(session, forKey: .session)

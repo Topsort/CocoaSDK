@@ -53,21 +53,42 @@ And run `swift package update`
 ```swift
 struct TopsortProduct : View {
   var topsort: TopsortSDK
-  var auctionId: String?
-  var productId: String
+  var product: Product
 
   var body: some View {
     MyProduct(...)
     .onGestureTap() {
       Task {
-        let event = HitEvent(
-          session: Session(sessionId: "deviceId"),
-          productId: productId,
-          auctionId: auctionId
+        let event = HitEvent(,
+          productId: product.productId,
+          auctionId: product.auctionId,
+          resolvedBidId: product.resolvedBidId,
         )
-        try? await topsort.logHit(hitEvent)
+        try? await topsort.logHitAsync(hitEvent)
       }
     }
   }
+}
+```
+
+#### Sending impression events when products are rendered.
+
+```swift
+struct Content : View {
+
+    var products: [Products]
+    
+    var body: some View {
+        LazyVGrid(columns: columns, spacing: 2) {
+            ForEach(products, id: \self) { product in
+                TopsortProduct(product: product)
+            }
+        }
+        .task {
+            try? await topsort.logImpressionsAsync(impressions: products.map { p in
+                Impression(productId: p.productId, auctionId: p.auctionId, resolvedBidId: p.resolvedBidId)
+            })
+        }
+    }
 }
 ```
