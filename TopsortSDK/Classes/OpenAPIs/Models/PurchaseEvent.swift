@@ -7,7 +7,7 @@
 
 import Foundation
 #if canImport(AnyCodable)
-    import AnyCodable
+import AnyCodable
 #endif
 
 /** The consumer has purchased some products. */

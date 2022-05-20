@@ -6,7 +6,7 @@
 
 import Foundation
 #if !os(macOS)
-    import MobileCoreServices
+import MobileCoreServices
 #endif
 
 class URLSessionRequestBuilderFactory: RequestBuilderFactory {

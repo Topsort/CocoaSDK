@@ -15,8 +15,8 @@ extension JSONEncodable {
 }
 
 /// An enum where the last case value can be used as a default catch-all.
-protocol CaseIterableDefaultsLast: Decodable & CaseIterable & RawRepresentable
-    where RawValue: Decodable, AllCases: BidirectionalCollection {}
+protocol CaseIterableDefaultsLast: Decodable, CaseIterable, RawRepresentable
+where RawValue: Decodable, AllCases: BidirectionalCollection {}
 
 extension CaseIterableDefaultsLast {
     /// Initializes an enum such that if a known raw value is found, then it is decoded.

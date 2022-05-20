@@ -7,7 +7,7 @@
 
 import Foundation
 #if canImport(AnyCodable)
-    import AnyCodable
+import AnyCodable
 #endif
 
 /** HitEvents are sent to Topsort when the consumer has clicked or tapped on a product impression. Topsort charges the vendor and pays the marketplace for clicks on impressions in promoted placements on the e-commerce app. */

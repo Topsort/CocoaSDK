@@ -53,8 +53,8 @@ class EventsAPI {
      Report an event
      - POST /events
      - BASIC:
-       - type: http
-       - name: BearerAuth
+     - type: http
+     - name: BearerAuth
      - parameter event: (body) Use the &#x60;/events&#x60; endpoint to notify Topsort about significant consumer interactions on the e-commerce site: impressions -- product links become visible to the consumer; clicks -- the consumer clicks on a product link; and purchases -- the consumer buys some products.
      - returns: RequestBuilder<EventResponse>
      */
@@ -76,7 +76,7 @@ class EventsAPI {
         let localVariableNillableHeaders: [String: Any?] = [
             "Authorization": "Bearer " + apiKey,
             "User-Agent": "iOS Topsort SDK",
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
         ]
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)

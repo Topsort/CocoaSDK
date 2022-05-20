@@ -7,7 +7,7 @@
 
 import Foundation
 #if canImport(AnyCodable)
-    import AnyCodable
+import AnyCodable
 #endif
 
 /** The Session object allows correlating user activity during a session whether or not they are actually logged in. */

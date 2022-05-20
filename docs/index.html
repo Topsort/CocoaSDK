@@ -159,7 +159,7 @@
   <span class="k">var</span> <span class="nv">topsort</span><span class="p">:</span> <span class="kt">TopsortSDK</span>
   <span class="k">var</span> <span class="nv">product</span><span class="p">:</span> <span class="kt">Product</span>
 
-  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="kt">MyProduct</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
     <span class="o">.</span><span class="nf">onGestureTap</span><span class="p">()</span> <span class="p">{</span>
       <span class="kt">Task</span> <span class="p">{</span>
@@ -168,7 +168,7 @@
           <span class="nv">auctionId</span><span class="p">:</span> <span class="n">product</span><span class="o">.</span><span class="n">auctionId</span><span class="p">,</span>
           <span class="nv">resolvedBidId</span><span class="p">:</span> <span class="n">product</span><span class="o">.</span><span class="n">resolvedBidId</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">try</span><span class="p">?</span> <span class="k">await</span> <span class="n">topsort</span><span class="o">.</span><span class="nf">logHitAsync</span><span class="p">(</span><span class="n">hitEvent</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">?</span> <span class="n">await</span> <span class="n">topsort</span><span class="o">.</span><span class="nf">logHitAsync</span><span class="p">(</span><span class="n">hitEvent</span><span class="p">)</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -179,14 +179,14 @@
 
     <span class="k">var</span> <span class="nv">products</span><span class="p">:</span> <span class="p">[</span><span class="kt">Products</span><span class="p">]</span>
 
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
         <span class="kt">LazyVGrid</span><span class="p">(</span><span class="nv">columns</span><span class="p">:</span> <span class="n">columns</span><span class="p">,</span> <span class="nv">spacing</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">ForEach</span><span class="p">(</span><span class="n">products</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">product</span> <span class="k">in</span>
+            <span class="kt">ForEach</span><span class="p">(</span><span class="n">products</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="err">\</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">product</span> <span class="k">in</span>
                 <span class="kt">TopsortProduct</span><span class="p">(</span><span class="nv">product</span><span class="p">:</span> <span class="n">product</span><span class="p">)</span>
             <span class="p">}</span>
         <span class="p">}</span>
         <span class="o">.</span><span class="n">task</span> <span class="p">{</span>
-            <span class="k">try</span><span class="p">?</span> <span class="k">await</span> <span class="n">topsort</span><span class="o">.</span><span class="nf">logImpressionsAsync</span><span class="p">(</span><span class="nv">impressions</span><span class="p">:</span> <span class="n">products</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">p</span> <span class="k">in</span>
+            <span class="k">try</span><span class="p">?</span> <span class="n">await</span> <span class="n">topsort</span><span class="o">.</span><span class="nf">logImpressionsAsync</span><span class="p">(</span><span class="nv">impressions</span><span class="p">:</span> <span class="n">products</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">p</span> <span class="k">in</span>
                 <span class="kt">Impression</span><span class="p">(</span><span class="nv">productId</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">productId</span><span class="p">,</span> <span class="nv">auctionId</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">auctionId</span><span class="p">,</span> <span class="nv">resolvedBidId</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">resolvedBidId</span><span class="p">)</span>
             <span class="p">})</span>
         <span class="p">}</span>
@@ -201,7 +201,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="https://topsort.com" target="_blank" rel="external noopener">Topsort</a>. All rights reserved. (Last updated: 2022-05-19)</p>
+      <p>&copy; 2022 <a class="link" href="https://topsort.com" target="_blank" rel="external noopener">Topsort</a>. All rights reserved. (Last updated: 2022-05-20)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>

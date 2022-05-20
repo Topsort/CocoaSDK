@@ -7,7 +7,7 @@
 
 import Foundation
 #if canImport(AnyCodable)
-    import AnyCodable
+import AnyCodable
 #endif
 
 /// A description of the error sent by the Topsort API

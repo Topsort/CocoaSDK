@@ -7,7 +7,7 @@
 
 import Foundation
 #if canImport(AnyCodable)
-    import AnyCodable
+import AnyCodable
 #endif
 
 /// Topsort's API response for events
